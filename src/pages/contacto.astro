@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Andes Habitat | Contacto">
+  <!-- Hero Contacto -->
+  <section
+    class="relative flex h-[280px] items-center justify-center bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80');"
+  >
+    <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+    <div class="relative z-10 px-6 text-center text-white">
+      <h1 class="text-4xl font-bold tracking-tight">Contacto</h1>
+      <p class="mt-4 max-w-xl text-lg text-slate-200">
+        Estamos para ayudarte a dar el próximo paso.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido -->
+  <section class="mx-auto max-w-7xl px-6 py-20">
+    <div class="grid gap-12 lg:grid-cols-2">
+      <!-- Información -->
+      <div>
+        <h2 class="mb-6 text-3xl font-bold tracking-tight">
+          Hablemos
+        </h2>
+        <p class="mb-8 text-slate-600 leading-relaxed">
+          Si estás interesado en alguno de nuestros proyectos o propiedades,
+          completá el formulario o escribinos directamente.
+        </p>
+
+        <ul class="space-y-4 text-slate-700">
+          <li><strong>📍 Ubicación:</strong> Lima, Perú</li>
+          <li><strong>📞 Teléfono:</strong> +51 999 999 999</li>
+          <li><strong>✉️ Email:</strong> contacto@andeshabitat.pe</li>
+        </ul>
+
+        <a
+          href="https://wa.me/51999999999"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-8 inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white
+                 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        >
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+      <!-- Formulario (sin funcionalidad) -->
+      <form class="rounded-2xl bg-slate-100 p-8 shadow-sm">
+        <div class="grid gap-6">
+          <div>
+            <label for="name" class="mb-2 block text-sm font-medium">Nombre</label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Tu nombre"
+              class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm font-medium">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="tu@email.com"
+              class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="mb-2 block text-sm font-medium">Mensaje</label>
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Contanos en qué podemos ayudarte"
+              class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            ></textarea>
+          </div>
+
+          <button
+            type="button"
+            class="mt-4 rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white
+                   hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            Enviar mensaje
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

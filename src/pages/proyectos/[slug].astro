@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { projects } from '../../lib/projects'
+import type { Project } from '../../lib/projects'
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }))
+}
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+
+<BaseLayout title={`Proyecto | ${project.name}`}>
+  <article class="mx-auto max-w-5xl px-6 py-16">
+    <img
+      src={project.image.src}
+      alt={project.image.alt}
+      class="mb-10 h-[420px] w-full rounded-xl object-cover"
+    />
+
+    <h1 class="mb-4 text-3xl font-bold tracking-tight">
+      {project.name}
+    </h1>
+
+    <p class="mb-2 text-slate-600">
+      {project.location}
+    </p>
+
+    <p class="mb-6 inline-block rounded-full bg-slate-200 px-4 py-1 text-sm font-medium">
+      {project.status}
+    </p>
+
+    <p class="max-w-2xl text-slate-700">
+      {project.description}
+    </p>
+  </article>
+</BaseLayout>

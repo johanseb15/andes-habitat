@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PropertyCard from '../../components/property/PropertyCard.astro'
+import { featuredProperties } from '../../lib/properties'
+---
+
+<BaseLayout title="Propiedades | Andes Habitat">
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <header class="mb-12">
+      <h1 class="mb-4 text-3xl font-bold tracking-tight">
+        Propiedades disponibles
+      </h1>
+      <p class="max-w-2xl text-slate-600">
+        Explorá nuestro portafolio de propiedades en venta y encontrá la opción
+        ideal para vos.
+      </p>
+    </header>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {featuredProperties.map((property) => (
+        <PropertyCard property={property} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

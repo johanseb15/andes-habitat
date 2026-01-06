@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PropertyCard from "../components/property/PropertyCard.astro";
+import ProjectCard from "../components/project/ProjectCard.astro";
+import { featuredProperties } from "../lib/properties";
+import { projects } from "../lib/projects";
+import AboutUs from "../components/sections/AboutUs.astro";
+
+
+---
+
+<BaseLayout title="Andes Habitat | Construimos espacios para tu futuro">
+	<section
+		class="relative flex h-[450px] items-center justify-center bg-cover bg-center"
+		style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80');"
+	>
+		<!-- Overlay -->
+		<div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+
+		<!-- Contenido -->
+		<div class="relative z-10 max-w-2xl px-6 text-center text-white">
+			<h1 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">
+				Construimos espacios para tu futuro
+			</h1>
+
+			<p class="mb-8 text-lg text-slate-200">
+				Desarrollo y venta de viviendas pensadas para familias e
+				inversores que buscan calidad, confianza y proyección.
+			</p>
+
+			<div class="flex justify-center gap-4">
+				<a
+					href="#"
+					class="rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white
+                 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+				>
+					Ver propiedades
+				</a>
+
+				<a
+					href="#"
+					class="rounded-lg border border-white/70 px-6 py-3 font-medium text-white
+                 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white"
+				>
+					Contactanos
+				</a>
+			</div>
+		</div>
+	</section>
+	<section class="mx-auto max-w-7xl px-6 py-20">
+		<header class="mb-12 text-center">
+			<h2 class="mb-4 text-3xl font-bold tracking-tight">
+				Propiedades destacadas
+			</h2>
+			<p class="mx-auto max-w-xl text-slate-600">
+				Descubrí algunas de nuestras propiedades más recientes y
+				proyectos en venta.
+			</p>
+		</header>
+
+		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				featuredProperties.map((property) => (
+					<PropertyCard property={property} />
+				))
+			}
+		</div>
+	</section>
+	<section class="mx-auto max-w-7xl px-6 py-20 bg-slate-100">
+  <header class="mb-12 text-center">
+    <h2 class="mb-4 text-3xl font-bold tracking-tight">
+      Proyectos en desarrollo
+    </h2>
+    <p class="mx-auto max-w-xl text-slate-600">
+      Conocé nuestros proyectos actuales y futuros desarrollos inmobiliarios.
+    </p>
+  </header>
+
+  <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {projects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </div>
+</section>
+<AboutUs />
+</BaseLayout>

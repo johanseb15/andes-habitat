@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutUs from "../components/sections/AboutUs.astro";
+---
+
+<BaseLayout title="Andes Habitat | Nosotros">
+  <!-- Hero Nosotros -->
+  <section
+    class="relative flex h-[300px] items-center justify-center bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1501183638710-841dd1904471?w=1600&q=80');"
+  >
+    <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+
+    <div class="relative z-10 px-6 text-center text-white">
+      <h1 class="text-4xl font-bold tracking-tight">Nosotros</h1>
+      <p class="mt-4 max-w-xl text-lg text-slate-200">
+        Construimos confianza a través de proyectos sólidos y una visión a largo plazo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección principal -->
+  <AboutUs />
+
+  <!-- Misión, Visión, Valores -->
+  <section class="mx-auto max-w-7xl px-6 py-20 bg-slate-50">
+    <div class="grid gap-12 md:grid-cols-3">
+      <div>
+        <h3 class="mb-4 text-xl font-semibold">Misión</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Desarrollar y comercializar viviendas de calidad, generando valor real
+          para familias e inversores, con procesos claros y un acompañamiento cercano.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-xl font-semibold">Visión</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Ser una referencia en desarrollos inmobiliarios sustentables,
+          reconocidos por nuestra seriedad, calidad constructiva y compromiso.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-xl font-semibold">Valores</h3>
+        <ul class="space-y-3 text-slate-600">
+          <li>• Transparencia en cada etapa</li>
+          <li>• Compromiso con la calidad</li>
+          <li>• Responsabilidad y confianza</li>
+          <li>• Visión a largo plazo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cierre / CTA -->
+  <section class="mx-auto max-w-7xl px-6 py-20 text-center">
+    <h2 class="mb-6 text-3xl font-bold tracking-tight">
+      Construyamos tu próximo hogar
+    </h2>
+    <p class="mx-auto mb-8 max-w-xl text-slate-600">
+      Estamos listos para acompañarte en tu próxima inversión inmobiliaria.
+    </p>
+
+    <a
+      href="/contacto"
+      class="inline-block rounded-lg bg-emerald-600 px-8 py-3 font-medium text-white
+             hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+    >
+      Contactanos
+    </a>
+  </section>
+</BaseLayout>

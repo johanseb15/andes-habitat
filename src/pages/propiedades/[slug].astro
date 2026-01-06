@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { featuredProperties } from '../../lib/properties'
+import type { Property } from '../../lib/properties'
+
+export function getStaticPaths() {
+  return featuredProperties.map((property) => ({
+    params: { slug: property.slug },
+    props: { property },
+  }))
+}
+
+interface Props {
+  property: Property
+}
+
+const { property } = Astro.props
+---
+
+<BaseLayout title={`Andes Habitat | ${property.title}`}>
+  <article class="mx-auto max-w-5xl px-6 py-16">
+    <img
+      src={property.image.src}
+      alt={property.image.alt}
+      class="mb-10 h-[420px] w-full rounded-xl object-cover"
+    />
+
+    <h1 class="mb-4 text-3xl font-bold tracking-tight">
+      {property.title}
+    </h1>
+
+    <p class="mb-2 text-slate-600">
+      {property.location}
+    </p>
+
+    <p class="mb-6 text-xl font-semibold text-emerald-700">
+      {property.price}
+    </p>
+
+    <p class="max-w-2xl text-slate-700">
+      {property.description}
+    </p>
+
+    <div class="mt-10">
+      <a
+        href="/contacto"
+        class="inline-block rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white
+               hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+      >
+        Consultar por esta propiedad
+      </a>
+    </div>
+  </article>
+</BaseLayout>

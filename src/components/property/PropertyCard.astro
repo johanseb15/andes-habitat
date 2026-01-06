@@ -1,0 +1,39 @@
+---
+import type { Property } from '../../lib/properties'
+
+interface Props {
+  property: Property
+}
+
+const { property } = Astro.props
+---
+
+<article
+  class="overflow-hidden rounded-xl bg-white shadow transition hover:shadow-lg focus-within:ring-2 focus-within:ring-emerald-500"
+>
+  <a href={`/propiedades/${property.slug}`} class="block focus:outline-none">
+    <img
+      src={property.image.src}
+      alt={property.image.alt}
+      loading="lazy"
+      width="1200"
+      height="675"
+      class="h-56 w-full object-cover"
+      fetchpriority="low"
+    />
+
+    <div class="p-5">
+      <h3 class="mb-1 text-lg font-semibold text-slate-900">
+        {property.title}
+      </h3>
+
+      <p class="text-sm text-slate-600">
+        {property.location}
+      </p>
+
+      <p class="mt-4 font-medium text-emerald-700">
+        {property.price}
+      </p>
+    </div>
+  </a>
+</article>

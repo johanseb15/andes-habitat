@@ -1,0 +1,45 @@
+---
+import type { Project } from '../../lib/projects'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+
+const statusStyles: Record<Project['status'], string> = {
+  'En obra': 'bg-amber-100 text-amber-800',
+  Finalizado: 'bg-emerald-100 text-emerald-800',
+  Próximo: 'bg-slate-200 text-slate-800',
+}
+---
+
+<article
+  class="overflow-hidden rounded-xl bg-white shadow transition hover:shadow-lg focus-within:ring-2 focus-within:ring-emerald-500"
+>
+  <a href={`/proyectos/${project.slug}`} class="block focus:outline-none">
+    <img
+      src={project.image.src}
+      alt={project.image.alt}
+      loading="lazy"
+      width="1200"
+      height="675"
+      class="h-56 w-full object-cover"
+      fetchpriority="low"
+    />
+
+    <div class="p-5">
+      <div class={`mb-2 inline-block rounded-full px-3 py-1 text-xs font-medium ${statusStyles[project.status]}`}>
+        {project.status}
+      </div>
+
+      <h3 class="mb-1 text-lg font-semibold">
+        {project.name}
+      </h3>
+
+      <p class="text-sm text-slate-600">
+        {project.location}
+      </p>
+    </div>
+  </a>
+</article>

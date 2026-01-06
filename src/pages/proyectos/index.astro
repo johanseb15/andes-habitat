@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import ProjectCard from '../../components/project/ProjectCard.astro'
+import { projects } from '../../lib/projects'
+---
+
+<BaseLayout title="Proyectos | Andes Habitat">
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <header class="mb-12">
+      <h1 class="mb-4 text-3xl font-bold tracking-tight">
+        Proyectos inmobiliarios
+      </h1>
+      <p class="max-w-2xl text-slate-600">
+        Desarrollos en curso, proyectos finalizados y próximos lanzamientos.
+      </p>
+    </header>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
