@@ -10,6 +10,9 @@ import AboutUs from "../components/sections/AboutUs.astro";
 ---
 
 <BaseLayout title="Andes Habitat | Construimos espacios para tu futuro">
+  <aside role="note" class="border-b border-amber-200 bg-amber-50 px-6 py-3 text-center text-sm font-medium text-amber-950">
+    Sitio demostrativo: las propiedades, precios y proyectos publicados son ejemplos ficticios; no representan ofertas comerciales reales.
+  </aside>
 	<section
 		class="relative flex h-[450px] items-center justify-center bg-cover bg-center"
 		style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80');"
@@ -30,7 +33,7 @@ import AboutUs from "../components/sections/AboutUs.astro";
 
 			<div class="flex justify-center gap-4">
 				<a
-					href="#"
+					href="/propiedades"
 					class="rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white
                  hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
 				>
@@ -38,7 +41,7 @@ import AboutUs from "../components/sections/AboutUs.astro";
 				</a>
 
 				<a
-					href="#"
+					href="/contacto"
 					class="rounded-lg border border-white/70 px-6 py-3 font-medium text-white
                  hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white"
 				>
