@@ -1,0 +1,7 @@
+packages:
+  - '.'
+
+# pnpm 11 fails closed on unreviewed install scripts. Scope approvals to lockfile versions.
+allowBuilds:
+  esbuild@0.25.12: true
+  sharp@0.34.5: true
