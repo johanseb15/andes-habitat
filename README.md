@@ -1,3 +1,22 @@
+> **Ficha de proyecto — Vyntrava | 2026-11-20**
+> Estado documental: revisión de repositorio; no implica despliegue ni auditoría de producción.
+
+## Resumen y propósito
+
+**Sitio de arquitectura y propiedades con Astro.** Base Astro con páginas de inicio, contacto, nosotros, propiedades y proyectos; el README anterior todavía era el starter de Astro.
+
+## Estado y límites
+
+Estructura de sitio identificada en el código. No hay verificación reciente de publicación ni de autorización comercial del contenido.
+
+## Ubicación en el portfolio
+
+Caso histórico de desarrollo web; revisar su vigencia antes de publicitarlo como entrega a cliente.
+
+**Código:** [andes-habitat](https://github.com/johanseb15/andes-habitat) · **Documentación técnica original:** continúa a continuación y puede reflejar un estado histórico.
+
+---
+
 # Astro Starter Kit: Minimal
 
 ```sh
